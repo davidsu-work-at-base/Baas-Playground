@@ -85,7 +85,7 @@ export default function TasksPage() {
               type="text"
               value={newTaskTitle}
               onChange={(e) => setNewTaskTitle(e.target.value)}
-              placeholder="What needs to be done? (watched)"
+              placeholder="What needs to be done?"
               className="flex-1 h-12 bg-white border-slate-200 rounded-xl shadow-sm"
             />
             <Button
