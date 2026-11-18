@@ -15,7 +15,7 @@ export default function CalendarPage() {
   const [connecting, setConnecting] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const popupTimer = useRef(null);
-
+  const watchedBy = "suss-app-watcher";
   const loadEvents = useCallback(async () => {
     try {
       const response = await base44.functions.invoke("getCalendarEvents", {});
