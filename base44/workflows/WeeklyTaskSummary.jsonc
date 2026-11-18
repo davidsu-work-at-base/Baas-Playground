@@ -1,0 +1,46 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 9 * * 1",
+      "one_time_date": null,
+      "timezone": "Asia/Jerusalem",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "weekly_task_summary",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_summary": {
+          "call": "send_email",
+          "with": {
+            "template_name": "WeeklyTaskSummary",
+            "to": "davidsu@base44.com",
+            "description": "Weekly one-line task summary with a link back to the app."
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send weekly summary",
+            "description": "To the app admin"
+          }
+        }
+      }
+    ]
+  },
+  "name": "Weekly Task Summary",
+  "description": "Sends the WeeklyTaskSummary email to the app admin every Monday at 09:00."
+}
